@@ -1,6 +1,7 @@
 import './App.css';
 import React from "react";
 import Header from './Header.js';
+import FilterList from './FilterList.js';
 import operators from './Operators.js';
 import Modal from './Modal.js';
 
@@ -35,6 +36,20 @@ class App extends React.Component {
     }
   };
 
+  filterListener = (e, filterType) => {
+    console.log("Filter clicked: ", e.currentTarget.dataset.name, filterType);
+    const name = e.currentTarget.dataset.name;
+    this.setState(prevState => ({
+      filterTags: {
+        ...prevState.filterTags,
+        [filterType]: {
+          ...prevState.filterTags[filterType],
+          [name]: !prevState.filterTags[filterType][name]
+        }
+      }
+    }))
+  }
+
   opClick = op => {
     this.setState(prevState => ({
       show: !prevState.show,
@@ -48,21 +63,9 @@ class App extends React.Component {
         <Header />
         <main className="wrapper">
 
-          { // types of filters
-            Object.entries(this.state.filterTags).map((filters) => {
-              // console.log(filters[1]);
-              return (
-                <ul className="filter-list" key={filters[0]}>
-                  { // individual filters
-                    Object.entries(filters[1]).map(([key, value]) => {
-                      // console.log(key, value);
-                      return (
-                        <li className="filter-element" key={key} data-selected={value}>{key + (filters[0] === 'rarity' ? "\u2606" : "")}<div className="overlay"></div></li>
-                      );
-                    })}
-                </ul>
-              );
-            })}
+          <FilterList
+            filters={this.state.filterTags}
+            filterListener={this.filterListener} />
 
           <ul className="operator-list">
 

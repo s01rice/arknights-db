@@ -1,3 +1,4 @@
+// Modal.js
 import React from "react";
 
 const baseUrl = "https://gamepress.gg";

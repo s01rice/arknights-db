@@ -2,10 +2,8 @@ import './App.css';
 import React from "react";
 import Header from './Header.js';
 import FilterList from './FilterList.js';
-import operators from './Operators.js';
+import OperatorList from './OperatorList.js';
 import Modal from './Modal.js';
-
-const baseUrl = "https://gamepress.gg"
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +12,7 @@ class App extends React.Component {
       show: false,
       selectedOp: null,
       filterTags: {
-        class: {
+        type: {
           Vanguard: false,
           Guard: false,
           Defender: false,
@@ -67,18 +65,9 @@ class App extends React.Component {
             filters={this.state.filterTags}
             filterListener={this.filterListener} />
 
-          <ul className="operator-list">
-
-            {operators.map((operator) => {
-
-              return (
-                <li className="op-list-element" key={operator.name} onClick={() => { this.opClick(operator); }}>
-                  <img src={baseUrl + operator.icon} alt={operator.name} className={`icon rarity-${operator.stats.rarity}`} />
-                  <div className="overlay"></div>
-                </li>
-              )
-            })}
-          </ul>
+          <OperatorList
+            filters={this.state.filterTags}
+            opClick={this.opClick} />
 
           <Modal
             onClose={this.opClick}

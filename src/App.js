@@ -35,7 +35,7 @@ class App extends React.Component {
   };
 
   filterListener = (e, filterType) => {
-    console.log("Filter clicked: ", e.currentTarget.dataset.name, filterType);
+    // console.log("Filter clicked: ", e.currentTarget.dataset.name, filterType);
     const name = e.currentTarget.dataset.name;
     this.setState(prevState => ({
       filterTags: {

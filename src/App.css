@@ -138,8 +138,30 @@ ul {
   transform: translateY(-50%);
 }
 
+.modal-close {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .modal-icon {
   width: 150px;
   height: 150px;
   border-radius: 8px;
+}
+
+.profile {
+  width: 200px;
+  padding: 10px;
+  margin: 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.description {
+  text-align: left;
+}
+
+.flex {
+  display: flex;
 }

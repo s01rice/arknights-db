@@ -39,7 +39,7 @@ export default class OperatorList extends React.Component {
     render() {
         const filters = this.filterCollect();
         const filteredOps = this.filterOps(operators, filters);
-        console.log(filters);
+        // console.log(filters);
 
         return (
             <ul className="operator-list">

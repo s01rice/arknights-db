@@ -14,7 +14,34 @@ export default class Modal extends React.Component {
             <React.Fragment>
                 {talentObject.map((talent) => {
                     return (
-                        <p>{talent.name}<br />{talent.desc}</p>
+                        <React.Fragment>
+                            <h4>{talent.name}</h4>
+                            <p>{talent.desc}</p>
+                        </React.Fragment>
+                    )
+                })}
+            </React.Fragment>
+        )
+    }
+
+    displaySkills = skillObject => {
+        if (skillObject.length === 0) return "None";
+        return (
+            <React.Fragment>
+                {skillObject.map((skill) => {
+                    return (
+                        <div className="skill">
+                            <div className="flex flex-center">
+                                <img src={baseUrl + skill.icon} className="skill-icon" />
+                                <div className="skill-info">
+                                    <h4>{skill.name}</h4>
+                                    <p>Initial SP: {skill.spInitial}<br />SP Cost: {skill.spCost}<br />Charge Type: {skill.chargeType}<br />Activation: {skill.activation}<br />Duration: {skill.duration}</p>
+                                </div>
+                            </div>
+                            <div className="skill-description">
+                                <p>Description: {skill.desc}</p>
+                            </div>
+                        </div>
                     )
                 })}
             </React.Fragment>
@@ -26,8 +53,8 @@ export default class Modal extends React.Component {
         if (!this.props.show) return null;
         return (
             <div className="modal">
-                <div className="modal-content wrapper flex">
-                    <div className="profile">
+                <div className="modal-content wrapper flex flex-start">
+                    <div className="profile modal-module">
 
                         <img src={baseUrl + this.props.op.icon} alt={this.props.op.name} className={`modal-icon rarity-${this.props.op.stats.rarity}`} />
 
@@ -42,10 +69,13 @@ export default class Modal extends React.Component {
                         Cost: {this.props.op.stats.cost}<br />
                         Block: {this.props.op.stats.block}<br /></p>
 
-                    </div>
-                    <div className="description">
                         <p>Traits: {this.props.op.traits}</p>
-                        <p>Talents: {this.displayTalents(this.props.op.talents)}</p>
+                    </div>
+                    <div className="description modal-module">
+                        <h3>Talents:</h3>
+                        <p>{this.displayTalents(this.props.op.talents)}</p>
+                        <h3>Skills: </h3>
+                        <p>{this.displaySkills(this.props.op.skills)}</p>
                     </div>
                 </div>
                 <button className="modal-close" onClick={this.onClose}>X</button>

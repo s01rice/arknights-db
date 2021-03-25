@@ -151,17 +151,43 @@ ul {
 }
 
 .profile {
-  width: 200px;
-  padding: 10px;
+  width: 220px;
+}
+
+.description {
+  text-align: left;
+  flex: 1;
+}
+
+.modal-module {
+  padding: 20px;
   margin: 20px;
   border: 1px solid white;
   border-radius: 5px;
 }
 
-.description {
-  text-align: left;
-}
-
 .flex {
   display: flex;
+}
+
+.flex-start {
+  align-items: flex-start;
+}
+
+.flex-center {
+  align-items: center;
+}
+
+.skill-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+}
+
+.skill-info {
+  margin: 0 10px;
+}
+
+.skill-description {
+  margin: 10px;
 }

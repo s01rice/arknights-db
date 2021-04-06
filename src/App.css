@@ -59,6 +59,7 @@ ul {
 }
 
 .op-list-element {
+  color: white;
   position: relative;
   width: 75px;
   height: 75px;
@@ -70,7 +71,7 @@ ul {
   border: 1px solid white;
   border-radius: 3px;
   padding: 3px 5px;
-  margin: 0 5px;
+  margin: 5px;
   cursor: pointer;
 }
 
@@ -141,7 +142,12 @@ ul {
 .modal-close {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
+  margin: 10px;
+  color: white;
+  background-color: rgb(0,0,0,0.9);
+  border: 1px solid white;
+  border-radius: 4px;
 }
 
 .modal-icon {
@@ -170,12 +176,20 @@ ul {
   display: flex;
 }
 
-.flex-start {
+.flex-align {
   align-items: flex-start;
 }
 
 .flex-center {
   align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.modal-direction {
+  flex-direction: row;
 }
 
 .skill-icon {
@@ -190,4 +204,49 @@ ul {
 
 .skill-description {
   margin: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .flex-align {
+    align-items: center;
+  }
+
+  .modal-direction {
+    flex-direction: column;
+  }
+
+  .modal {
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .modal-content {
+    top: 0;
+    transform: none;
+  }
+
+  .profile {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .operator-list {  
+    grid-template-columns: repeat(auto-fit, minmax(60px, max-content));
+    grid-gap: 10px;
+  }
+
+  .op-list-element {
+    color: white;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
 }

@@ -5,6 +5,7 @@ import React from "react";
 export default class FilterList extends React.Component {
 
     filterListener = (e, filterType) => {
+        e.preventDefault();
         this.props.filterListener(e, filterType);
     }
 
@@ -16,7 +17,7 @@ export default class FilterList extends React.Component {
                     Object.entries(this.props.filters).map((filters) => {
                         // console.log(filters[1]);
                         return (
-                            <ul className="filter-list" key={filters[0]} data-name={filters[0]}>
+                            <ul className="filter-list flex flex-wrap" key={filters[0]} data-name={filters[0]}>
                                 { // individual filters
                                     Object.entries(filters[1]).map(([key, value]) => {
                                         // console.log(key, value);

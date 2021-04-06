@@ -202,6 +202,10 @@ ul {
   margin: 0 10px;
 }
 
+.skill-direction {
+  flex-direction: row;
+}
+
 .skill-description {
   margin: 10px;
 }
@@ -248,5 +252,18 @@ ul {
     width: 60px;
     height: 60px;
     cursor: pointer;
+  }
+
+  .skill-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .skill-direction {
+    flex-direction: column;
+  }
+
+  .skill-info {
+    text-align: center;
   }
 }

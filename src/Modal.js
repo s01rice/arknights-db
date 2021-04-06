@@ -31,7 +31,7 @@ export default class Modal extends React.Component {
                 {skillObject.map((skill) => {
                     return (
                         <div className="skill">
-                            <div className="flex flex-center">
+                            <div className="flex flex-center skill-direction">
                                 <img className="skill-icon" src={baseUrl + skill.icon} alt={`${skill.name} icon`} />
                                 <div className="skill-info">
                                     <h4>{skill.name}</h4>

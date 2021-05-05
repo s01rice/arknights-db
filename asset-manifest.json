@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/arknights-db/static/css/main.e7948aed.chunk.css",
+    "main.css": "/arknights-db/static/css/main.6659c4e6.chunk.css",
     "main.js": "/arknights-db/static/js/main.2b8ca1bc.chunk.js",
     "main.js.map": "/arknights-db/static/js/main.2b8ca1bc.chunk.js.map",
     "runtime-main.js": "/arknights-db/static/js/runtime-main.98b2d7eb.js",
@@ -10,13 +10,13 @@
     "static/js/3.3bc20bf7.chunk.js": "/arknights-db/static/js/3.3bc20bf7.chunk.js",
     "static/js/3.3bc20bf7.chunk.js.map": "/arknights-db/static/js/3.3bc20bf7.chunk.js.map",
     "index.html": "/arknights-db/index.html",
-    "static/css/main.e7948aed.chunk.css.map": "/arknights-db/static/css/main.e7948aed.chunk.css.map",
+    "static/css/main.6659c4e6.chunk.css.map": "/arknights-db/static/css/main.6659c4e6.chunk.css.map",
     "static/js/2.f4f6e7f5.chunk.js.LICENSE.txt": "/arknights-db/static/js/2.f4f6e7f5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.98b2d7eb.js",
     "static/js/2.f4f6e7f5.chunk.js",
-    "static/css/main.e7948aed.chunk.css",
+    "static/css/main.6659c4e6.chunk.css",
     "static/js/main.2b8ca1bc.chunk.js"
   ]
 }
